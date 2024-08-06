@@ -1,0 +1,34 @@
+<section class="d-flex align-items-center justify-content-center pt-5">
+    <div class="container d-flex flex-column align-items-center pt-5">
+      <h1 class="fw-bold">PORTFOLIO COMPONENT</h1>
+      <div class="d-flex align-items-center">
+        <div class="dash me-3"></div>
+        <i class="fa-solid fa-star text-black me-3"></i>
+        <div class="dash me-3"></div>
+      </div>
+      <div class="row g-5 py-4">
+        @for (img of imgs; track $index) {
+            <div class="col-md-4">
+                <div class="rounded-2 overflow-hidden position-relative">
+                  <img [src]="img" alt="" />
+                  <div
+                    class="layer d-flex align-items-center justify-content-center"
+                    (click)="showImage($index)"
+                  >
+                    <i class="fa-solid fa-plus fa-2xl" style="color: #ffffff"></i>
+                  </div>
+                </div>
+              </div>
+        }
+      </div>
+    </div>
+    @if (userClick) {
+        <div
+            class="contain bg-primary bg-opacity-25"
+            (click)="hideContain($event)"
+        >
+            <img [src]="imgSrc" alt="" />
+        </div>
+    }
+  </section>
+  
